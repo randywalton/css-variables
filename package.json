@@ -1,0 +1,25 @@
+{
+  "name": "css-variables",
+  "version": "1.0.0",
+  "description": "CSS Variables Example",
+  "main": "index.html",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-terser": "^1.1.7",
+    "gulp-watch": "^5.0.1",
+    "node-sass": "^4.11.0"
+  },
+  "dependencies": {
+    "gulp-update": "0.0.2"
+  }
+}
