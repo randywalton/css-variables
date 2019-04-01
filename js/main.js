@@ -1,4 +1,4 @@
-function tes() {
-  return 'this is a test test'
+function test() {
+  return 'this is a to see if gulp is watching!!'
 }
-tes();
+test();

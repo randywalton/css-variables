@@ -1,7 +1,7 @@
 
 Testing out CSS variables
 
-Testing;
+Goals;
 
     Creating CSS variables
     Using CSS variables dynamically
