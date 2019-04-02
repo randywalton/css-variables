@@ -1,3 +1,23 @@
 /* ==========================================================================
   Site Variables
   ========================================================================== */
+
+:root {
+  //Typography
+  --type_base_header: 'Vollkorn', serif;
+  --type_base_copy: 'Vollkorn', serif;
+  --type_base_size: 16px;
+
+  //Colour
+  --site_base_red: 0;
+  --site_base_green: 0;
+  --site_base_blue: 0;
+
+  //Grid
+  --site_width: 1024px;
+  --site_columns: 8;
+  --site_rows: 4;
+  --site_gutter: 1.25em;
+
+
+}

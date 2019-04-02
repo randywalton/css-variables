@@ -1,3 +1,37 @@
 /* ==========================================================================
   Typography
   ========================================================================== */
+html, body {
+  line-height: 1.2;
+  font-size: var(--type_base_size);
+  font-family: var(--type_base_copy);
+}
+
+p {
+  font-size: 1em;
+  margin:0 0 0.4em 0;
+  font-weight: 400;
+  font-family: var(--type_base_copy);
+  color:#333;
+}
+
+h1, h2, h3 {
+  // color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
+  margin:0 0 0.4em 0;
+  font-family: var(--type_base_header);
+}
+
+h1 {
+  font-size: 2.7em;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+}
