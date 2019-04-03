@@ -93,18 +93,25 @@ textarea {
   Typography
   ========================================================================== */
 html, body {
-  line-height: 1.2;
+  line-height: 1.5;
   font-size: var(--type_base_size);
   font-family: var(--type_base_copy); }
 
 p {
+  position: relative;
   font-size: 1em;
-  margin: 0 0 0.4em 0;
+  margin: 0 0 0.8em 0;
   font-weight: 400;
   font-family: var(--type_base_copy);
-  color: #333; }
+  color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
+  text-indent: var(--site_gutter);
+  text-align: justify;
+  text-justify: inter-word; }
 
 h1, h2, h3, h4 {
+  position: relative;
+  line-height: 1.2;
+  color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
   margin: 0 0 0.4em 0;
   font-family: var(--type_base_header); }
 
@@ -119,6 +126,14 @@ h2 {
 h3 {
   font-size: 1.7em;
   font-weight: 600; }
+  h3:after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    border-bottom: 4px solid rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
+    height: 1px;
+    bottom: -4px;
+    width: 3em; }
 
 h4 {
   font-size: 1.1em;
@@ -141,43 +156,49 @@ form {
   grid-gap: var(--site_gutter); }
 
 #site_header {
-  grid-column: 4 / 9;
+  grid-column: 1 / 9;
   grid-row: 1 / 2; }
 
 #site_nav {
-  grid-column: 1 / 4;
-  grid-row: 1 / 2; }
+  grid-column: 1 / 9;
+  grid-row: 2 / 4; }
 
 #main_image {
-  grid-column: 1 / 6;
-  grid-row: 2 / 5; }
+  grid-column: 1 / 9;
+  grid-row: 4 / 5;
+  padding-top: 100%; }
 
 #site_article01 {
-  grid-column: 6 / 9;
-  grid-row: 2 / 6; }
+  grid-column: 1 / 9;
+  grid-row: 5 / 6; }
 
 #site_article02 {
-  grid-column: 1 / 6;
-  grid-row: 5 / 8; }
+  grid-column: 1 / 9;
+  grid-row: 6 / 8; }
 
 #site_footer {
   grid-column: 1 / 9;
-  grid-row: 8 / 9; }
+  grid-row: 7 / 9; }
 
 .site_header {
   min-height: 300px;
   align-self: stretch;
   background-color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
-  color: var(--text_on_color);
   padding: var(--site_gutter);
   display: flex;
   flex-direction: column;
   justify-content: flex-end; }
+  .site_header h1, .site_header h2, .site_header h3, .site_header h4 {
+    color: var(--text_on_color); }
+    .site_header h1 span, .site_header h2 span, .site_header h3 span, .site_header h4 span {
+      background: white;
+      color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
+      padding: 0.225em 0.325em 0px 1.5em; }
 
 .site_nav {
   align-self: end;
   padding-top: var(--site_gutter);
-  border-bottom: 1px solid rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1); }
+  border-bottom: 2px solid rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1); }
   .site_nav fieldset {
     display: flex;
     flex-direction: row;
@@ -187,6 +208,8 @@ form {
       justify-content: flex-start; }
       .site_nav fieldset.radio_btn label {
         margin: 0px 15px 0px 5px; }
+  .site_nav h1, .site_nav h2, .site_nav h3, .site_nav h4 {
+    color: #333; }
 
 .main_image {
   position: relative;
@@ -198,8 +221,8 @@ form {
   background-position: center center; }
   .main_image figcaption {
     position: absolute;
-    bottom: 20%;
-    left: -40px;
+    bottom: var(--site_gutter);
+    left: var(--site_gutter);
     border: 10px solid var(--text_on_color);
     color: var(--text_on_color);
     padding: var(--site_gutter);
@@ -291,8 +314,29 @@ form {
   These examples override the primary ('mobile first') styles.
   Modify as content requires.
   ========================================================================== */
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */ }
+@media only screen and (min-width: 600px) {
+  #site_header {
+    grid-column: 4 / 9;
+    grid-row: 1 / 2; }
+  #site_nav {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2; }
+  #main_image {
+    grid-column: 1 / 6;
+    grid-row: 2 / 5;
+    padding-top: 50%; }
+  #site_article01 {
+    grid-column: 6 / 9;
+    grid-row: 2 / 6; }
+  #site_article02 {
+    grid-column: 1 / 6;
+    grid-row: 5 / 8; }
+  #site_footer {
+    grid-column: 1 / 9;
+    grid-row: 8 / 9; }
+  .main_image figcaption {
+    bottom: 20%;
+    left: -40px; } }
 
 @media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */ }

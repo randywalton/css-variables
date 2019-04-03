@@ -5,9 +5,49 @@
   Modify as content requires.
   ========================================================================== */
 
-  @media only screen and (min-width: 35em) {
-   /* Style adjustments for viewports that meet the condition */
-}
+  @media only screen and (min-width: 600px) {
+    #site_header {
+      grid-column: 4 / 9;
+      grid-row: 1 / 2;
+    }
+
+    #site_nav {
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+    }
+
+    #main_image {
+      grid-column: 1 / 6;
+      grid-row: 2 / 5;
+      padding-top: 50%;
+    }
+
+    #site_article01 {
+      grid-column: 6 / 9;
+      grid-row: 2 / 6;
+    }
+
+    #site_article02 {
+      grid-column: 1 / 6;
+      grid-row: 5 / 8;
+    }
+
+    #site_footer {
+      grid-column: 1 / 9;
+      grid-row: 8 / 9;
+    }
+
+    .main_image {
+
+      figcaption {
+
+        bottom: 20%;
+        left: -40px;
+
+      }
+    }
+
+  }
 
 @media print,
       (-webkit-min-device-pixel-ratio: 1.25),

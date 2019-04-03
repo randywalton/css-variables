@@ -2,21 +2,39 @@
   Typography
   ========================================================================== */
 html, body {
-  line-height: 1.2;
+  line-height: 1.5;
   font-size: var(--type_base_size);
   font-family: var(--type_base_copy);
 }
 
 p {
+  position: relative;
   font-size: 1em;
-  margin:0 0 0.4em 0;
+  margin:0 0 0.8em 0;
   font-weight: 400;
   font-family: var(--type_base_copy);
-  color:#333;
+  color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
+  text-indent: var(--site_gutter);
+  text-align: justify;
+  text-justify: inter-word;
+  &::first-letter {
+    //font-weight: 900;
+  }
+  &:before {
+    // content: '';
+    // position: absolute;
+    // left: 0px;
+    // border-bottom: 3px solid rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
+    // height: 1px;
+    // top: 0.65em;
+    // width: 0.8em;
+  }
 }
 
 h1, h2, h3, h4 {
-  // color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
+  position: relative;
+  line-height: 1.2;
+  color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
   margin:0 0 0.4em 0;
   font-family: var(--type_base_header);
 }
@@ -34,6 +52,17 @@ h2 {
 h3 {
   font-size: 1.7em;
   font-weight: 600;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    border-bottom: 4px solid rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
+    height: 1px;
+    bottom: -4px;
+    width: 3em;
+  }
+
 }
 
 h4 {
