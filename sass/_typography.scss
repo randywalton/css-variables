@@ -9,14 +9,16 @@ html, body {
 
 p {
   position: relative;
-  font-size: 1em;
-  margin:0 0 0.8em 0;
+  font-size: 1rem;
+  margin:0 0 0.8rem 0;
   font-weight: 400;
   font-family: var(--type_base_copy);
-  color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
+  //color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
   text-indent: var(--site_gutter);
   text-align: justify;
   text-justify: inter-word;
+  color: var(--text_on_color);
+
   &::first-letter {
     //font-weight: 900;
   }
@@ -26,8 +28,8 @@ p {
     // left: 0px;
     // border-bottom: 3px solid rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
     // height: 1px;
-    // top: 0.65em;
-    // width: 0.8em;
+    // top: 0.65rem;
+    // width: 0.8rem;
   }
 }
 
@@ -35,42 +37,50 @@ h1, h2, h3, h4 {
   position: relative;
   line-height: 1.2;
   color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
-  margin:0 0 0.4em 0;
+  margin:0 0 0.4rem 0;
   font-family: var(--type_base_header);
 }
 
 h1 {
-  font-size: 2.8em;
+  font-size: 2.8rem;
   font-weight: 900;
 }
 
 h2 {
-  font-size: 2.2em;
+  font-size: 2.2rem;
   font-weight: 700;
 }
 
 h3 {
-  font-size: 1.7em;
+  font-size: 1.7rem;
   font-weight: 600;
+  background: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
+  padding: var(--site_gutter);
+  border: var(--site_borders) solid var(--text_on_color);
+  color: var(--text_on_color);
 
   &:after {
     content: '';
     position: absolute;
     left: 0px;
-    border-bottom: 4px solid rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
+    border-bottom: var(--site_borders) solid var(--text_on_color);
     height: 1px;
-    bottom: -4px;
-    width: 3em;
+    bottom: 0px;
+    width: 6rem;
   }
 
 }
 
 h4 {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-top:0.2em;
+  margin-top:0.2rem;
 }
 
 form {
   font-size: 16px;
+
+  h4 {
+    font-size: 18px;
+  }
 }

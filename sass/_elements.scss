@@ -16,7 +16,12 @@
     color: #222;
     font-size: 1em;
     line-height: 1.4;
-}
+  }
+
+  body {
+    background-color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 0.5);
+    //background-image: linear-gradient(rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1), rgba(0,0,0,0));
+  }
 
 /*
  * Remove text-shadow in selection highlight:
@@ -27,6 +32,15 @@
  *
  * Customize the background color to match your design.
  */
+
+ /* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 
 ::selection {
     background: #b3d4fc;

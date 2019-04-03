@@ -50,6 +50,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  border: var(--site_borders) solid var(--text_on_color);
 
   h1, h2, h3, h4 {
     color:var(--text_on_color);
@@ -64,7 +65,7 @@
 .site_nav {
   align-self:end;
   padding-top: var(--site_gutter);
-  border-bottom: 2px solid rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
+  //border-bottom: 2px solid rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
 
   fieldset {
     display: flex;
@@ -94,12 +95,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  border: var(--site_borders) solid var(--text_on_color);
 
   figcaption {
     position: absolute;
     bottom: var(--site_gutter);
     left: var(--site_gutter);
-    border: 10px solid var(--text_on_color);
+    border: var(--site_borders) solid var(--text_on_color);
     color:var(--text_on_color);
     padding: var(--site_gutter);
     background-color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);

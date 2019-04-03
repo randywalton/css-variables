@@ -9,10 +9,11 @@
   --site_base_green: 0;
   --site_base_blue: 0;
   --text_on_color: white;
-  --site_width: 1024px;
+  --site_width: 1200px;
   --site_columns: 8;
   --site_rows: 4;
-  --site_gutter: 1.25em; }
+  --site_gutter: 1.5rem;
+  --site_borders: 0.8rem; }
 
 /*! HTML5 Boilerplate v7.0.1 | MIT License | https://html5boilerplate.com/ */
 /* main.css 1.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
@@ -29,6 +30,9 @@ html {
   font-size: 1em;
   line-height: 1.4; }
 
+body {
+  background-color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 0.5); }
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -38,6 +42,13 @@ html {
  *
  * Customize the background color to match your design.
  */
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 ::selection {
   background: #b3d4fc;
   text-shadow: none; }
@@ -99,49 +110,55 @@ html, body {
 
 p {
   position: relative;
-  font-size: 1em;
-  margin: 0 0 0.8em 0;
+  font-size: 1rem;
+  margin: 0 0 0.8rem 0;
   font-weight: 400;
   font-family: var(--type_base_copy);
-  color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
   text-indent: var(--site_gutter);
   text-align: justify;
-  text-justify: inter-word; }
+  text-justify: inter-word;
+  color: var(--text_on_color); }
 
 h1, h2, h3, h4 {
   position: relative;
   line-height: 1.2;
   color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
-  margin: 0 0 0.4em 0;
+  margin: 0 0 0.4rem 0;
   font-family: var(--type_base_header); }
 
 h1 {
-  font-size: 2.8em;
+  font-size: 2.8rem;
   font-weight: 900; }
 
 h2 {
-  font-size: 2.2em;
+  font-size: 2.2rem;
   font-weight: 700; }
 
 h3 {
-  font-size: 1.7em;
-  font-weight: 600; }
+  font-size: 1.7rem;
+  font-weight: 600;
+  background: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
+  padding: var(--site_gutter);
+  border: var(--site_borders) solid var(--text_on_color);
+  color: var(--text_on_color); }
   h3:after {
     content: '';
     position: absolute;
     left: 0px;
-    border-bottom: 4px solid rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
+    border-bottom: var(--site_borders) solid var(--text_on_color);
     height: 1px;
-    bottom: -4px;
-    width: 3em; }
+    bottom: 0px;
+    width: 6rem; }
 
 h4 {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-top: 0.2em; }
+  margin-top: 0.2rem; }
 
 form {
   font-size: 16px; }
+  form h4 {
+    font-size: 18px; }
 
 /* ==========================================================================
   Structure, layout and (author) elements
@@ -187,7 +204,8 @@ form {
   padding: var(--site_gutter);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  border: var(--site_borders) solid var(--text_on_color); }
   .site_header h1, .site_header h2, .site_header h3, .site_header h4 {
     color: var(--text_on_color); }
     .site_header h1 span, .site_header h2 span, .site_header h3 span, .site_header h4 span {
@@ -197,8 +215,7 @@ form {
 
 .site_nav {
   align-self: end;
-  padding-top: var(--site_gutter);
-  border-bottom: 2px solid rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1); }
+  padding-top: var(--site_gutter); }
   .site_nav fieldset {
     display: flex;
     flex-direction: row;
@@ -218,12 +235,13 @@ form {
   padding: 0px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center; }
+  background-position: center center;
+  border: var(--site_borders) solid var(--text_on_color); }
   .main_image figcaption {
     position: absolute;
     bottom: var(--site_gutter);
     left: var(--site_gutter);
-    border: 10px solid var(--text_on_color);
+    border: var(--site_borders) solid var(--text_on_color);
     color: var(--text_on_color);
     padding: var(--site_gutter);
     background-color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1); }
