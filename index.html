@@ -30,17 +30,32 @@
     </header>
 
     <nav id="site_nav" class="site_nav">
-      <label>Red <span id="red_value"></span></label>
-      <input type="range" name="red" min="0" max="255" value="255" id="red_slider">
-      <label>Blue <span id="blue_value"></span></label>
-      <input type="range" name="blue" min="0" max="255" value="255" id="blue_slider">
-      <label>Green <span id="green_value"></span></label>
-      <input type="range" name="green" min="0" max="255" value="255" id="green_slider">
-      <label>Base Font Size</label>
-      <input type="range" name="font_size" value="16" min="10" max="30">
-      <input type="radio" name="typography" value="Serif">Serif
-      <input type="radio" name="typography" value="Sans-Serif">Sans-Serif
-      <input type="radio" name="typography" value="Both">Both
+
+      <form id="page_control">
+        <h4>Colour Control</h4>
+        <fieldset>
+          <label>Red <span id="red_value"></span></label>
+          <input type="range" name="red" min="0" max="255" value="255" id="red_slider">
+        </fieldset>
+        <fieldset>
+          <label>Blue <span id="blue_value"></span></label>
+          <input type="range" name="blue" min="0" max="255" value="255" id="blue_slider">
+        </fieldset>
+        <fieldset>
+          <label>Green <span id="green_value"></span></label>
+          <input type="range" name="green" min="0" max="255" value="255" id="green_slider">
+        </fieldset>
+        <h4>Type Control</h4>
+        <fieldset>
+          <label>Base Font Size <span id="type_value"></span></label>
+          <input type="range" name="font_size" id="type_size" value="16" min="10" max="30">
+        </fieldset>
+        <fieldset id="radio_btn" class="radio_btn">
+          <input type="radio" name="typography" id="serif" value="Serif"> <label>Serif</label>
+          <input type="radio" name="typography" id="sans_serif" value="Sans-Serif"> <label>Sans-Serif</label>
+          <input type="radio" name="typography" id="both" value="Both"> <label>Both</label>
+        </fieldset>
+      </form>
     </nav>
 
     <figure id="main_image" class="main_image">
@@ -64,6 +79,7 @@
     </article>
 
     <footer id="site_footer" class="site_footer">
+      <p>Footer info</p>
 
     </footer>
 
@@ -74,15 +90,24 @@
 
 
   <!-- <script src="js/plugins.js"></script> -->
-  <script src="js/main.js"></script>
+  <script src="build/js/localstorage.min.js"></script>
+  <script src="build/js/main.min.js"></script>
   <script>
-    var red_slider = document.getElementById("red_slider");
-    var red_value = document.getElementById("red_value");
-    output.innerHTML = slider.value;
-
-    slider.oninput = function() {
-      output.innerHTML = this.value;
-    }
+    // var red_slider = document.getElementById("red_slider");
+    // var red_value = document.getElementById("red_value");
+    // red_value.innerHTML = red_slider.value;
+    //
+    // red_slider.oninput = function() {
+    //   red_value.innerHTML = this.value;
+    // }
+    //
+    // var type_slider = document.getElementById("type_size");
+    // var type_value = document.getElementById("type_value");
+    // type_value.innerHTML = type_slider.value;
+    //
+    // type_slider.oninput = function() {
+    //   type_value.innerHTML = this.value;
+    // }
 </script>
 
 

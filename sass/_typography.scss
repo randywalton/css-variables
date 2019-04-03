@@ -15,23 +15,33 @@ p {
   color:#333;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   // color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
   margin:0 0 0.4em 0;
   font-family: var(--type_base_header);
 }
 
 h1 {
-  font-size: 2.7em;
+  font-size: 2.8em;
   font-weight: 900;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.2em;
   font-weight: 700;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.7em;
   font-weight: 600;
+}
+
+h4 {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-top:0.2em;
+}
+
+form {
+  font-size: 16px;
 }

@@ -8,6 +8,7 @@
   --site_base_red: 0;
   --site_base_green: 0;
   --site_base_blue: 0;
+  --text_on_color: white;
   --site_width: 1024px;
   --site_columns: 8;
   --site_rows: 4;
@@ -103,21 +104,29 @@ p {
   font-family: var(--type_base_copy);
   color: #333; }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   margin: 0 0 0.4em 0;
   font-family: var(--type_base_header); }
 
 h1 {
-  font-size: 2.7em;
+  font-size: 2.8em;
   font-weight: 900; }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.2em;
   font-weight: 700; }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.7em;
   font-weight: 600; }
+
+h4 {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-top: 0.2em; }
+
+form {
+  font-size: 16px; }
 
 /* ==========================================================================
   Structure, layout and (author) elements
@@ -152,24 +161,32 @@ h3 {
   grid-row: 5 / 8; }
 
 #site_footer {
-  grid-column: 1 / 3;
+  grid-column: 1 / 9;
   grid-row: 8 / 9; }
 
 .site_header {
+  min-height: 300px;
   align-self: stretch;
   background-color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
-  color: white;
+  color: var(--text_on_color);
   padding: var(--site_gutter);
   display: flex;
   flex-direction: column;
   justify-content: flex-end; }
 
 .site_nav {
-  min-height: 300px;
-  display: flex;
-  flex-direction: column;
+  align-self: end;
   padding-top: var(--site_gutter);
   border-bottom: 1px solid rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1); }
+  .site_nav fieldset {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 0px; }
+    .site_nav fieldset.radio_btn {
+      justify-content: flex-start; }
+      .site_nav fieldset.radio_btn label {
+        margin: 0px 15px 0px 5px; }
 
 .main_image {
   position: relative;
@@ -183,14 +200,20 @@ h3 {
     position: absolute;
     bottom: 20%;
     left: -40px;
-    border: 10px solid white;
-    color: white;
+    border: 10px solid var(--text_on_color);
+    color: var(--text_on_color);
     padding: var(--site_gutter);
     background-color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1); }
 
 .site_footer {
   background-color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
-  min-height: 100px; }
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .site_footer p {
+    text-align: center;
+    color: var(--text_on_color); }
 
 /* ==========================================================================
   Helper classes

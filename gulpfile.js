@@ -2,11 +2,14 @@ const gulp = require('gulp'),
     terser = require('gulp-terser'),
     rename = require('gulp-rename'),
     watch = require('gulp-watch'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    eslint = require('gulp-eslint');
 
 gulp.task('scripts', function(){
   return gulp.src('./js/*.js')
-    .pipe(terser())
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
     .pipe(rename({ extname: '.min.js' }))
     .pipe(gulp.dest('./build/js'))
 });
