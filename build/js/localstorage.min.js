@@ -33,6 +33,7 @@ if (storageAvailable('localStorage')) {
     localStorage.setItem('green', '0');
     localStorage.setItem('typesize', '16');
     localStorage.setItem('typestyle', 'serif');
+    localStorage.setItem('neutraltype', 'white');
 
     console.log('nothing set yet');
   } else {

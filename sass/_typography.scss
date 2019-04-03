@@ -63,10 +63,10 @@ h3 {
     content: '';
     position: absolute;
     left: 0px;
-    border-bottom: var(--site_borders) solid var(--text_on_color);
+    border-bottom: 3px solid var(--text_on_color);
     height: 1px;
-    bottom: 0px;
-    width: 6rem;
+    bottom: 10px;
+    width: 10rem;
   }
 
 }

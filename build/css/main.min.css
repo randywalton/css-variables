@@ -13,7 +13,7 @@
   --site_columns: 8;
   --site_rows: 4;
   --site_gutter: 1.5rem;
-  --site_borders: 0.8rem; }
+  --site_borders: 0.5rem; }
 
 /*! HTML5 Boilerplate v7.0.1 | MIT License | https://html5boilerplate.com/ */
 /* main.css 1.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
@@ -145,10 +145,10 @@ h3 {
     content: '';
     position: absolute;
     left: 0px;
-    border-bottom: var(--site_borders) solid var(--text_on_color);
+    border-bottom: 3px solid var(--text_on_color);
     height: 1px;
-    bottom: 0px;
-    width: 6rem; }
+    bottom: 10px;
+    width: 10rem; }
 
 h4 {
   font-size: 1.1rem;
@@ -205,11 +205,12 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border: var(--site_borders) solid var(--text_on_color); }
+  border: var(--site_borders) solid var(--text_on_color);
+  border-top: 0px; }
   .site_header h1, .site_header h2, .site_header h3, .site_header h4 {
     color: var(--text_on_color); }
     .site_header h1 span, .site_header h2 span, .site_header h3 span, .site_header h4 span {
-      background: white;
+      background: var(--text_on_color);
       color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
       padding: 0.225em 0.325em 0px 1.5em; }
 

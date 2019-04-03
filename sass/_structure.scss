@@ -51,11 +51,12 @@
   flex-direction: column;
   justify-content: flex-end;
   border: var(--site_borders) solid var(--text_on_color);
+  border-top:0px;
 
   h1, h2, h3, h4 {
     color:var(--text_on_color);
     span {
-      background: white;
+      background: var(--text_on_color);
       color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
       padding: 0.225em 0.325em 0px 1.5em;
     }
