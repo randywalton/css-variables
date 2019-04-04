@@ -169,7 +169,7 @@ form {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(var(--site_columns), 1fr);
-  grid-template-rows: repeat(auto, 1fr);
+  grid-template-rows: repeat(var(--site_columns), auto);
   grid-gap: var(--site_gutter); }
 
 #site_header {
@@ -252,7 +252,9 @@ form {
   min-height: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  border: var(--site_borders) solid var(--text_on_color);
+  border-bottom: 0px; }
   .site_footer p {
     text-align: center;
     color: var(--text_on_color); }

@@ -48,13 +48,24 @@
         <h4>Type Control</h4>
         <fieldset>
           <label>Base Font Size <span id="type_value"></span></label>
-          <input type="range" name="font_size" id="type_size" value="16" min="10" max="30">
+          <input type="range" name="font_size" id="type_size" value="16" min="12" max="24">
         </fieldset>
         <fieldset id="radio_btn" class="radio_btn">
           <input type="radio" name="typography" id="serif" value="Serif"> <label>Serif</label>
           <input type="radio" name="typography" id="sans_serif" value="Sans-Serif"> <label>Sans-Serif</label>
           <input type="radio" name="typography" id="both" value="Both"> <label>Both</label>
         </fieldset>
+
+        <h4>Layout Control</h4>
+        <fieldset>
+          <label>Site Width <span id="site_width_value"></span></label>
+          <input type="range" name="site_width" id="site_width_slider" value="1024" min="1000" max="1600">
+        </fieldset>
+
+        <!-- <fieldset>
+          <label>Image Column Span <span id="image_col_value"></span></label>
+          <input type="number" name="image_col" value="1" min="1" max="3"><input type="number" name="image_col" value="3" min="3" max="5">
+        </fieldset> -->
       </form>
     </nav>
 

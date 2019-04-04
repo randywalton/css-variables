@@ -7,7 +7,7 @@
   margin:0 auto;
   display: grid;
   grid-template-columns: repeat(var(--site_columns), 1fr);
-  grid-template-rows: repeat(auto, 1fr);
+  grid-template-rows: repeat(var(--site_columns), auto);
   grid-gap: var(--site_gutter);
 }
 
@@ -109,12 +109,15 @@
   }
 }
 
+
 .site_footer {
   background-color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
   min-height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: var(--site_borders) solid var(--text_on_color);
+  border-bottom: 0px;
 
   p {
     text-align: center;

@@ -34,6 +34,7 @@ if (storageAvailable('localStorage')) {
     localStorage.setItem('typesize', '16');
     localStorage.setItem('typestyle', 'serif');
     localStorage.setItem('neutraltype', 'white');
+    localStorage.setItem('siteWidth', '1024');
 
     console.log('nothing set yet');
   } else {

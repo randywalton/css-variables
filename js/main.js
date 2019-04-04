@@ -4,28 +4,31 @@
     const red_slider = document.getElementById('red_slider'),
           blue_slider = document.getElementById('blue_slider'),
           green_slider = document.getElementById('green_slider'),
-          type_slider = document.getElementById('type_size');
+          type_slider = document.getElementById('type_size'),
+          site_width_slider = document.getElementById('site_width_slider');
 
-    const pageControl = document.getElementById('page_control');
+    //const pageControl = document.getElementById('page_control');
 
     const serif_btn = document.getElementById('serif'),
           sans_serif_btn = document.getElementById('sans_serif'),
           both_btn = document.getElementById('both'),
           radio_btn = document.getElementById('radio_btn');
 
-    let root = document.documentElement;
+    const root = document.documentElement;
 
     let styleValues = localStorage.getItem('typestyle');
     let neutraltype = localStorage.getItem('neutraltype');
+    //let siteWidth = localStorage.getItem('siteWidth');
 
     let slidersValues = [
       { storage: localStorage.getItem('red'), target: red_slider },
       { storage: localStorage.getItem('blue'), target: blue_slider },
       { storage: localStorage.getItem('green'), target: green_slider },
-      { storage: localStorage.getItem('typesize'), target: type_slider }
+      { storage: localStorage.getItem('typesize'), target: type_slider },
+      { storage: localStorage.getItem('siteWidth'), target: site_width_slider }
     ];
 
-    const colourSlider = (function() {
+    const pageControl = (function() {
 
       let init = function() {
         _bindEvents();
@@ -68,6 +71,13 @@
           document.getElementById(valueText).innerHTML = type_slider.value;
           root.style.setProperty('--type_base_size', type_slider.value+'px');
           localStorage.setItem('typesize', type_slider.value);
+        }
+
+        site_width_slider.oninput = function() {
+          let valueText = site_width_slider.parentNode.getElementsByTagName('SPAN')[0].id;
+          document.getElementById(valueText).innerHTML = site_width_slider.value;
+          root.style.setProperty('--site_width', site_width_slider.value+'px');
+          localStorage.setItem('siteWidth', site_width_slider.value);
         }
 
         serif_btn.addEventListener("click", function(e) {
@@ -127,6 +137,7 @@
         root.style.setProperty('--type_base_size', slidersValues[3].storage+'px');
 
         root.style.setProperty('--text_on_color', neutraltype);
+        root.style.setProperty('--site_width', slidersValues[4].storage+'px');
 
 
         if (styleValues === 'serif') {
@@ -142,8 +153,6 @@
           root.style.setProperty('--type_base_header', 'Vollkorn, serif');
           root.style.setProperty('--type_base_copy', 'Source Sans Pro, sans-serif');
         }
-
-
       };
 
       return {
@@ -151,6 +160,6 @@
       };
 
     }());
-    colourSlider.init();
+    pageControl.init();
 
 }());
