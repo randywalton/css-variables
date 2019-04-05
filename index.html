@@ -22,7 +22,7 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-  <main class="page_grid">
+  <main id="page_grid" class="page_grid">
 
     <header id="site_header" class="site_header">
       <h1><span>CSS</span> Grid & Variables</h1>
@@ -62,6 +62,10 @@
           <input type="range" name="site_width" id="site_width_slider" value="1024" min="1000" max="1600">
         </fieldset>
 
+        <fieldset>
+          <button id="toggleGrid">Toggle Grid Control</button><button id="resetGrid">Reset Grid</button>
+        </fieldset>
+
         <!-- <fieldset>
           <label>Image Column Span <span id="image_col_value"></span></label>
           <input type="number" name="image_col" value="1" min="1" max="3"><input type="number" name="image_col" value="3" min="3" max="5">
@@ -71,11 +75,37 @@
 
     <figure id="main_image" class="main_image">
 
+      <nav id="grid_image" class="grid_controller">
+        <div class="item_info">
+          <p>col span <span>1-8</span></p>
+          <p>row span <span>1-8</span></p>
+        </div>
+        <div class="top"> <button class="pushbottom"></button> <button class="pushtop"></button> </div>
+        <div class="left"> <button class="pushright"></button> <button class="pushleft"></button> </div>
+        <div class="right"> <button class="pushleft"></button> <button class="pushright"></button> </div>
+        <div class="bottom"> <button class="pushbottom"></button> <button class="pushtop"></button> </div>
+
+
+      </nav>
+
       <figcaption>NASA Imagery of the Soul Nebula</figcaption>
 
     </figure>
 
     <article id="site_article01" class="site_article">
+
+      <nav id="grid_article01" class="grid_controller">
+        <div class="item_info">
+          <p>col span <span>1-8</span></p>
+          <p>row span <span>1-8</span></p>
+        </div>
+        <div class="top"> <button class="pushbottom"></button> <button class="pushtop"></button> </div>
+        <div class="left"> <button class="pushright"></button> <button class="pushleft"></button> </div>
+        <div class="right"> <button class="pushleft"></button> <button class="pushright"></button> </div>
+        <div class="bottom"> <button class="pushbottom"></button> <button class="pushtop"></button> </div>
+
+      </nav>
+
       <h3>A test controlling a page with CSS variables</h3>
       <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at gravida enim, convallis dapibus sem. Praesent rutrum scelerisque nunc, vitae dignissim enim. Nulla semper tristique sem, quis dapibus diam eleifend hendrerit. Mauris gravida consequat justo, molestie cursus nunc porttitor ut. Praesent vitae purus non quam ultricies fermentum molestie aliquet felis. Fusce in magna vel risus dictum feugiat sed a quam. Vivamus cursus, sem ut ultrices porta, tellus metus fringilla mauris, sed convallis leo eros quis lectus. Fusce mollis, mi ultricies interdum dignissim, enim sapien fermentum odio, a suscipit lorem turpis vel sapien. Integer auctor leo nec sapien sagittis venenatis. Etiam sed mi cursus, porttitor tortor a, condimentum erat. Mauris non fringilla quam, at cursus arcu. Quisque sit amet odio ac dui mollis euismod non et arcu. Fusce urna leo, fringilla at risus ut, mollis finibus turpis. Vestibulum tincidunt, dui nec lobortis dapibus, enim justo facilisis lacus, at rutrum mauris lorem at enim.
       </p>
@@ -84,12 +114,41 @@
     </article>
 
     <article id="site_article02" class="site_article">
+
+      <nav id="grid_article02" class="grid_controller">
+
+        <div class="item_info">
+          <p>col span <span>1-8</span></p>
+          <p>row span <span>1-8</span></p>
+        </div>
+
+        <div class="top"> <button class="pushbottom"></button> <button class="pushtop"></button> </div>
+        <div class="left"> <button class="pushright"></button> <button class="pushleft"></button> </div>
+        <div class="right"> <button class="pushleft"></button> <button class="pushright"></button> </div>
+        <div class="bottom"> <button class="pushbottom"></button> <button class="pushtop"></button> </div>
+
+      </nav>
+
       <h3>Some more filler text</h3>
       <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at gravida enim, convallis dapibus sem. Praesent rutrum scelerisque nunc, vitae dignissim enim. Nulla semper tristique sem, quis dapibus diam eleifend hendrerit. Mauris gravida consequat justo, molestie cursus nunc porttitor ut. Praesent vitae purus non quam ultricies fermentum molestie aliquet felis. Fusce in magna vel risus dictum feugiat sed a quam. Vivamus cursus, sem ut ultrices porta, tellus metus fringilla mauris, sed convallis leo eros quis lectus. Fusce mollis, mi ultricies interdum dignissim, enim sapien fermentum odio, a suscipit lorem turpis vel sapien. Integer auctor leo nec sapien sagittis venenatis. Etiam sed mi cursus, porttitor tortor a, condimentum erat. Mauris non fringilla quam, at cursus arcu. Quisque sit amet odio ac dui mollis euismod non et arcu. Fusce urna leo, fringilla at risus ut, mollis finibus turpis. Vestibulum tincidunt, dui nec lobortis dapibus, enim justo facilisis lacus, at rutrum mauris lorem at enim.
       </p>
     </article>
 
     <footer id="site_footer" class="site_footer">
+
+      <nav id="grid_footer" class="grid_controller">
+
+        <div class="item_info">
+          <p>col span <span>1-8</span></p>
+          <p>row span <span>1-8</span></p>
+        </div>
+
+        <div class="top"> <button class="pushbottom"></button> <button class="pushtop"></button> </div>
+        <div class="left"> <button class="pushright"></button> <button class="pushleft"></button> </div>
+        <div class="right"> <button class="pushleft"></button> <button class="pushright"></button> </div>
+        <div class="bottom"> <button class="pushbottom"></button> <button class="pushtop"></button> </div>
+
+      </nav>
       <p>Footer info</p>
 
     </footer>

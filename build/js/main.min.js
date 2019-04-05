@@ -7,7 +7,12 @@
           type_slider = document.getElementById('type_size'),
           site_width_slider = document.getElementById('site_width_slider');
 
-    //const pageControl = document.getElementById('page_control');
+    const grid_image = document.getElementById('grid_image'),
+          grid_footer = document.getElementById('grid_footer'),
+          grid_article01 = document.getElementById('grid_article01'),
+          grid_article02 = document.getElementById('grid_article02'),
+          gridControl_btn = document.getElementById('toggleGrid');
+
 
     const serif_btn = document.getElementById('serif'),
           sans_serif_btn = document.getElementById('sans_serif'),
@@ -18,7 +23,6 @@
 
     let styleValues = localStorage.getItem('typestyle');
     let neutraltype = localStorage.getItem('neutraltype');
-    //let siteWidth = localStorage.getItem('siteWidth');
 
     let slidersValues = [
       { storage: localStorage.getItem('red'), target: red_slider },
@@ -29,6 +33,8 @@
     ];
 
     const pageControl = (function() {
+
+      let gridStatus = false;
 
       let init = function() {
         _bindEvents();
@@ -101,6 +107,27 @@
           localStorage.setItem('typestyle', 'both');
         });
 
+        gridControl_btn.addEventListener("click", function(e) {
+          e.preventDefault();
+
+          if (!gridStatus) {
+            grid_image.style.display = "block";
+            grid_article01.style.display = "block";
+            grid_article02.style.display = "block";
+            grid_footer.style.display = "block";
+            gridStatus = true;
+            //console.log('on');
+          } else {
+            grid_image.style.display = "none";
+            grid_article01.style.display = "none";
+            grid_article02.style.display = "none";
+            grid_footer.style.display = "none";
+            gridStatus = false;
+            //console.log('off');
+          }
+
+        });
+
       };
 
 
@@ -161,5 +188,83 @@
 
     }());
     pageControl.init();
+
+
+    const gridControl = (function() {
+
+      const maxCells = 9;
+
+      let init = function() {
+        _bindEvents();
+
+      };
+
+      let _bindEvents = function() {
+        grid_image.addEventListener("click", function(e) {
+          e.stopPropagation();
+          // console.log(e.target.parentNode.parentNode.id);
+          // console.log(e.target.parentNode.className);
+          // console.log(e.target.className);
+          let container = e.target.parentNode.parentNode.id;
+          let position = e.target.parentNode.className;
+          let action = e.target.className;
+          _moveObject(container, position, action);
+
+        });
+
+        grid_article01.addEventListener("click", function(e) {
+          e.stopPropagation();
+          let container = e.target.parentNode.parentNode.id;
+          let position = e.target.parentNode.className;
+          let action = e.target.className;
+
+
+          _moveObject(container, position, action);
+
+        });
+
+      };
+
+
+      let _moveObject = function(container, position, action) {
+
+        let target = '--'+container+'-'+position;
+        let num = getComputedStyle(document.documentElement).getPropertyValue(target);
+
+        console.log(target +' - '+ num);
+
+        if (action==='pushtop' && num > 1) {
+          //console.log('pushtop');
+          root.style.setProperty(target, --num);
+          updateItemInfo(container);
+        } else if (action==='pushbottom' && num < maxCells) {
+          //console.log('pushbottom');
+          root.style.setProperty(target, ++num);
+        } else if (action==='pushright' && num < maxCells) {
+          //console.log('pushright');
+          root.style.setProperty(target, ++num);
+        } else if (action==='pushleft' && num > 1) {
+          //console.log('pushleft');
+          root.style.setProperty(target, --num);
+        } else {
+          console.log('at the edge!');
+        }
+
+        function updateItemInfo(target) {
+          console.log(target);
+          let itemText = document.getElementById(target);
+          itemText.getElementsByClassName('item_info')[0].innerHTML = 'test';
+
+        }
+
+      };
+
+      return {
+          init: init
+      };
+
+    }());
+    gridControl.init();
+
 
 }());
