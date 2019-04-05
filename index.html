@@ -25,6 +25,21 @@
   <main id="page_grid" class="page_grid">
 
     <header id="site_header" class="site_header">
+
+      <!-- <nav id="grid_header" class="grid_controller">
+
+        <div class="item_info">
+          <p>col span <span>1-8</span></p>
+          <p>row span <span>8-8</span></p>
+        </div>
+
+        <div class="top"> <button class="pushbottom"></button> <button class="pushtop"></button> </div>
+        <div class="left"> <button class="pushright"></button> <button class="pushleft"></button> </div>
+        <div class="right"> <button class="pushleft"></button> <button class="pushright"></button> </div>
+        <div class="bottom"> <button class="pushbottom"></button> <button class="pushtop"></button> </div>
+
+      </nav> -->
+
       <h1><span>CSS</span> Grid & Variables</h1>
       <h2>An experiment testing grid and dynamic variables</h2>
     </header>
@@ -33,38 +48,38 @@
 
       <form id="page_control">
         <h4>Colour Control</h4>
-        <fieldset>
+        <div role="group">
           <label>Red <span id="red_value"></span></label>
           <input type="range" name="red" min="0" max="255" value="255" id="red_slider">
-        </fieldset>
-        <fieldset>
+        </div>
+        <div role="group">
           <label>Blue <span id="blue_value"></span></label>
           <input type="range" name="blue" min="0" max="255" value="255" id="blue_slider">
-        </fieldset>
-        <fieldset>
+        </div>
+        <div role="group">
           <label>Green <span id="green_value"></span></label>
           <input type="range" name="green" min="0" max="255" value="255" id="green_slider">
-        </fieldset>
+        </div>
         <h4>Type Control</h4>
-        <fieldset>
+        <div role="group">
           <label>Base Font Size <span id="type_value"></span></label>
           <input type="range" name="font_size" id="type_size" value="16" min="12" max="24">
-        </fieldset>
-        <fieldset id="radio_btn" class="radio_btn">
+        </div>
+        <div role="group" id="radio_btn" class="radio_btn">
           <input type="radio" name="typography" id="serif" value="Serif"> <label>Serif</label>
           <input type="radio" name="typography" id="sans_serif" value="Sans-Serif"> <label>Sans-Serif</label>
           <input type="radio" name="typography" id="both" value="Both"> <label>Both</label>
-        </fieldset>
+        </div>
 
         <h4>Layout Control</h4>
-        <fieldset>
+        <div role="group">
           <label>Site Width <span id="site_width_value"></span></label>
           <input type="range" name="site_width" id="site_width_slider" value="1024" min="1000" max="1600">
-        </fieldset>
+        </div>
 
-        <fieldset>
-          <button id="toggleGrid">Toggle Grid Control</button><button id="resetGrid">Reset Grid</button>
-        </fieldset>
+        <div role="group">
+          <button id="toggleGrid">Toggle Grid Control (desktop)</button><button id="resetGrid_btn">Reset Grid</button>
+        </div>
 
         <!-- <fieldset>
           <label>Image Column Span <span id="image_col_value"></span></label>
@@ -77,8 +92,8 @@
 
       <nav id="grid_image" class="grid_controller">
         <div class="item_info">
-          <p>col span <span>1-8</span></p>
-          <p>row span <span>1-8</span></p>
+          <p>Col span: <span class="nums">1-5</span></p>
+          <p>Row span: <span class="nums">2-4</span></p>
         </div>
         <div class="top"> <button class="pushbottom"></button> <button class="pushtop"></button> </div>
         <div class="left"> <button class="pushright"></button> <button class="pushleft"></button> </div>
@@ -96,8 +111,8 @@
 
       <nav id="grid_article01" class="grid_controller">
         <div class="item_info">
-          <p>col span <span>1-8</span></p>
-          <p>row span <span>1-8</span></p>
+          <p>Col span: <span class="nums">6-8</span></p>
+          <p>Row span: <span class="nums">2-5</span></p>
         </div>
         <div class="top"> <button class="pushbottom"></button> <button class="pushtop"></button> </div>
         <div class="left"> <button class="pushright"></button> <button class="pushleft"></button> </div>
@@ -118,8 +133,8 @@
       <nav id="grid_article02" class="grid_controller">
 
         <div class="item_info">
-          <p>col span <span>1-8</span></p>
-          <p>row span <span>1-8</span></p>
+          <p>Col span: <span class="nums">1-5</span></p>
+          <p>Row span: <span class="nums">5-7</span></p>
         </div>
 
         <div class="top"> <button class="pushbottom"></button> <button class="pushtop"></button> </div>
@@ -139,8 +154,8 @@
       <nav id="grid_footer" class="grid_controller">
 
         <div class="item_info">
-          <p>col span <span>1-8</span></p>
-          <p>row span <span>1-8</span></p>
+          <p>Col span: <span class="nums">1-8</span></p>
+          <p>Row span: <span class="nums">8-8</span></p>
         </div>
 
         <div class="top"> <button class="pushbottom"></button> <button class="pushtop"></button> </div>

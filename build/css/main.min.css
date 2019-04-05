@@ -47,7 +47,7 @@ html {
   line-height: 1.4; }
 
 body {
-  background-color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 0.5); }
+  background-color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 0.4); }
 
 /*
  * Remove text-shadow in selection highlight:
@@ -100,6 +100,9 @@ fieldset {
   border: 0;
   margin: 0;
   padding: 0; }
+
+button {
+  padding: 5px; }
 
 /*
  * Allow only vertical resizing of textareas.
@@ -214,6 +217,7 @@ form {
   grid-row: 8 / 9; }
 
 .site_header {
+  position: relative;
   min-height: 300px;
   align-self: stretch;
   background-color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
@@ -233,14 +237,16 @@ form {
 .site_nav {
   align-self: end;
   padding-top: var(--site_gutter); }
-  .site_nav fieldset {
+  .site_nav .red_value, .site_nav .blue_value, .site_nav .green_value {
+    font-weight: 900; }
+  .site_nav div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 5px 0px; }
-    .site_nav fieldset.radio_btn {
+    .site_nav div.radio_btn {
       justify-content: flex-start; }
-      .site_nav fieldset.radio_btn label {
+      .site_nav div.radio_btn label {
         margin: 0px 15px 0px 5px; }
   .site_nav h1, .site_nav h2, .site_nav h3, .site_nav h4 {
     color: #333; }
@@ -348,7 +354,8 @@ form {
       padding: 0;
       margin: 0;
       text-indent: unset;
-      color: black; }
+      color: black;
+      font-size: 0.8rem; }
 
 /* ==========================================================================
   Helper classes

@@ -9,7 +9,6 @@
   grid-template-columns: repeat(var(--site_columns), 1fr);
   grid-template-rows: repeat(var(--site_columns), auto);
   grid-gap: var(--site_gutter);
-
 }
 
 #site_header {
@@ -44,6 +43,7 @@
 }
 
 .site_header{
+  position: relative;
   min-height: 300px;
   align-self: stretch;
   background-color: rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
@@ -70,7 +70,11 @@
   padding-top: var(--site_gutter);
   //border-bottom: 2px solid rgba(var(--site_base_red), var(--site_base_green), var(--site_base_blue), 1);
 
-  fieldset {
+  .red_value, .blue_value, .green_value {
+    font-weight: 900;
+  }
+
+  div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -226,6 +230,7 @@
       margin: 0;
       text-indent: unset;
       color: black;
+      font-size: 0.8rem;
     }
   }
 

@@ -36,11 +36,11 @@ if (storageAvailable('localStorage')) {
     localStorage.setItem('neutraltype', 'white');
     localStorage.setItem('siteWidth', '1024');
 
-    console.log('nothing set yet');
+    //console.log('nothing set yet');
   } else {
-    console.log('var set');
+    //console.log('var set');
   }
 
 } else {
-  console.log('NO local storage!');
+  //console.log('NO local storage!');
 }

@@ -7,7 +7,8 @@
           type_slider = document.getElementById('type_size'),
           site_width_slider = document.getElementById('site_width_slider');
 
-    const grid_image = document.getElementById('grid_image'),
+    const grid_header = document.getElementById('grid_header'),
+          grid_image = document.getElementById('grid_image'),
           grid_footer = document.getElementById('grid_footer'),
           grid_article01 = document.getElementById('grid_article01'),
           grid_article02 = document.getElementById('grid_article02'),
@@ -17,7 +18,8 @@
     const serif_btn = document.getElementById('serif'),
           sans_serif_btn = document.getElementById('sans_serif'),
           both_btn = document.getElementById('both'),
-          radio_btn = document.getElementById('radio_btn');
+          radio_btn = document.getElementById('radio_btn'),
+          resetGrid_btn = document.getElementById('resetGrid_btn');
 
     const root = document.documentElement;
 
@@ -111,6 +113,7 @@
           e.preventDefault();
 
           if (!gridStatus) {
+            //grid_header.style.display = "block";
             grid_image.style.display = "block";
             grid_article01.style.display = "block";
             grid_article02.style.display = "block";
@@ -118,6 +121,7 @@
             gridStatus = true;
             //console.log('on');
           } else {
+            //grid_header.style.display = "none";
             grid_image.style.display = "none";
             grid_article01.style.display = "none";
             grid_article02.style.display = "none";
@@ -126,6 +130,12 @@
             //console.log('off');
           }
 
+        });
+
+        resetGrid_btn.addEventListener("click", function(e) {
+          e.preventDefault();
+          //console.log('reset');
+          location.reload();
         });
 
       };
@@ -217,10 +227,23 @@
           let container = e.target.parentNode.parentNode.id;
           let position = e.target.parentNode.className;
           let action = e.target.className;
-
-
           _moveObject(container, position, action);
+        });
 
+        grid_article02.addEventListener("click", function(e) {
+          e.stopPropagation();
+          let container = e.target.parentNode.parentNode.id;
+          let position = e.target.parentNode.className;
+          let action = e.target.className;
+          _moveObject(container, position, action);
+        });
+
+        grid_footer.addEventListener("click", function(e) {
+          e.stopPropagation();
+          let container = e.target.parentNode.parentNode.id;
+          let position = e.target.parentNode.className;
+          let action = e.target.className;
+          _moveObject(container, position, action);
         });
 
       };
@@ -240,24 +263,36 @@
         } else if (action==='pushbottom' && num < maxCells) {
           //console.log('pushbottom');
           root.style.setProperty(target, ++num);
+          updateItemInfo(container);
         } else if (action==='pushright' && num < maxCells) {
           //console.log('pushright');
           root.style.setProperty(target, ++num);
+          updateItemInfo(container);
         } else if (action==='pushleft' && num > 1) {
           //console.log('pushleft');
           root.style.setProperty(target, --num);
+          updateItemInfo(container);
         } else {
           console.log('at the edge!');
         }
 
-        function updateItemInfo(target) {
-          console.log(target);
-          let itemText = document.getElementById(target);
-          itemText.getElementsByClassName('item_info')[0].innerHTML = 'test';
+        function updateItemInfo(area) {
+          console.log(area);
+          let itemText = document.getElementById(area);
+
+          //let test = '--'+area+'-top';
+          let top = getComputedStyle(document.documentElement).getPropertyValue('--'+area+'-top');
+          let left = getComputedStyle(document.documentElement).getPropertyValue('--'+area+'-left');
+          let right = getComputedStyle(document.documentElement).getPropertyValue('--'+area+'-right');
+          let bottom = getComputedStyle(document.documentElement).getPropertyValue('--'+area+'-bottom');
+          //console.log(top);
+          itemText.getElementsByClassName('nums')[0].innerHTML = left+" - "+(right-1);
+          itemText.getElementsByClassName('nums')[1].innerHTML = top+" - "+(bottom-1);
 
         }
 
       };
+
 
       return {
           init: init
