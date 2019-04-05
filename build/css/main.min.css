@@ -4,12 +4,12 @@
 :root {
   --type_base_header: 'Vollkorn', serif;
   --type_base_copy: 'Vollkorn', serif;
-  --type_base_size: 16px;
+  --site_base_size: 16px;
   --site_base_red: 0;
   --site_base_green: 0;
   --site_base_blue: 0;
   --text_on_color: white;
-  --site_width: 1200px;
+  --site_base_width: 1200px;
   --site_columns: 8;
   --site_rows: 4;
   --site_gutter: 1.5rem;
@@ -124,7 +124,7 @@ textarea {
   ========================================================================== */
 html, body {
   line-height: 1.5;
-  font-size: var(--type_base_size);
+  font-size: var(--site_base_size);
   font-family: var(--type_base_copy); }
 
 p {
@@ -183,7 +183,7 @@ form {
   Structure, layout and (author) elements
   ========================================================================== */
 .page_grid {
-  max-width: var(--site_width);
+  max-width: var(--site_base_width);
   width: 90%;
   margin: 0 auto;
   display: grid;

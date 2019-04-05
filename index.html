@@ -50,31 +50,31 @@
         <h4>Colour Control</h4>
         <div role="group">
           <label>Red <span id="red_value"></span></label>
-          <input type="range" name="red" min="0" max="255" value="255" id="red_slider">
+          <input type="range" name="red" min="0" max="255" value="255" id="red_slider" class="slider">
         </div>
         <div role="group">
           <label>Blue <span id="blue_value"></span></label>
-          <input type="range" name="blue" min="0" max="255" value="255" id="blue_slider">
+          <input type="range" name="blue" min="0" max="255" value="255" id="blue_slider" class="slider">
         </div>
         <div role="group">
           <label>Green <span id="green_value"></span></label>
-          <input type="range" name="green" min="0" max="255" value="255" id="green_slider">
+          <input type="range" name="green" min="0" max="255" value="255" id="green_slider" class="slider">
         </div>
         <h4>Type Control</h4>
         <div role="group">
           <label>Base Font Size <span id="type_value"></span></label>
-          <input type="range" name="font_size" id="type_size" value="16" min="12" max="24">
+          <input type="range" name="font_size" id="size_slider" value="16" min="12" max="24" class="slider">
         </div>
         <div role="group" id="radio_btn" class="radio_btn">
-          <input type="radio" name="typography" id="serif" value="Serif"> <label>Serif</label>
-          <input type="radio" name="typography" id="sans_serif" value="Sans-Serif"> <label>Sans-Serif</label>
-          <input type="radio" name="typography" id="both" value="Both"> <label>Both</label>
+          <input type="radio" name="typography" id="serif" class="type_style" value="Serif"> <label>Serif</label>
+          <input type="radio" name="typography" id="sans_serif" class="type_style" value="Sans-Serif"> <label>Sans-Serif</label>
+          <input type="radio" name="typography" id="both" class="type_style" value="Both"> <label>Both</label>
         </div>
 
         <h4>Layout Control</h4>
         <div role="group">
           <label>Site Width <span id="site_width_value"></span></label>
-          <input type="range" name="site_width" id="site_width_slider" value="1024" min="1000" max="1600">
+          <input type="range" name="site_width" id="width_slider" class="slider" value="1024" min="1000" max="1600">
         </div>
 
         <div role="group">

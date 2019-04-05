@@ -26,15 +26,17 @@ function storageAvailable(type) {
 if (storageAvailable('localStorage')) {
   //localStorage.clear();
 
-  if (!localStorage.getItem('red')) {
-
-    localStorage.setItem('red', '0');
-    localStorage.setItem('blue', '0');
-    localStorage.setItem('green', '0');
-    localStorage.setItem('typesize', '16');
+  if (!localStorage.getItem('storage_red')) {
+    //sliders
+    localStorage.setItem('storage_red', '0');
+    localStorage.setItem('storage_blue', '0');
+    localStorage.setItem('storage_green', '0');
+    localStorage.setItem('storage_size', '16');
+    localStorage.setItem('storage_width', '1024');
+    //buttons
     localStorage.setItem('typestyle', 'serif');
     localStorage.setItem('neutraltype', 'white');
-    localStorage.setItem('siteWidth', '1024');
+
 
     //console.log('nothing set yet');
   } else {

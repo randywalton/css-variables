@@ -2,7 +2,7 @@
   Structure, layout and (author) elements
   ========================================================================== */
 .page_grid {
-  max-width: var(--site_width);
+  max-width: var(--site_base_width);
   width:90%;
   margin:0 auto;
   display: grid;
