@@ -1,4 +1,4 @@
-# Ignore system files
+# System
 .DS_Store
 .DS_Store?
 ._*
@@ -7,5 +7,13 @@
 ehthumbs.db
 *[Tt]humbs.db
 *.Trashes
-# Ignore npm packages
-node_modules/
+
+# Editor
+.vscode
+config.codekit3
+.gitignore
+
+# Node
+node_modules
+npm-debug.log
+
