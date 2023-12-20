@@ -7,18 +7,15 @@
           size_slider = document.getElementById('size_slider'),
           width_slider = document.getElementById('width_slider');
 
-    const grid_header = document.getElementById('grid_header'),
-          grid_image = document.getElementById('grid_image'),
+    const grid_image = document.getElementById('grid_image'),
           grid_footer = document.getElementById('grid_footer'),
           grid_article01 = document.getElementById('grid_article01'),
           grid_article02 = document.getElementById('grid_article02'),
           gridControl_btn = document.getElementById('toggleGrid');
+          //grid_header = document.getElementById('grid_header');
 
 
-    const serif_btn = document.getElementById('serif'),
-          sans_serif_btn = document.getElementById('sans_serif'),
-          both_btn = document.getElementById('both'),
-          radio_btn = document.getElementById('radio_btn'),
+    const radio_btn = document.getElementById('radio_btn'),
           resetGrid_btn = document.getElementById('resetGrid_btn');
 
     const rootVars = document.documentElement;
@@ -56,7 +53,7 @@
             let valueText = getTarget.parentNode.getElementsByTagName('SPAN')[0].id;
             let storageTarget = targetID.replace('_slider','');
 
-            console.log('slider ' + targetID + ' - ' +valueText + ' - '+getTarget);
+            //console.log('slider ' + targetID + ' - ' +valueText + ' - '+getTarget);
 
             document.getElementById(valueText).innerHTML = getTarget.value;
 
@@ -146,7 +143,7 @@
       let _loadSliderNumbers = function() {
 
         for (var key in slidersValues) {
-          if (slidersValues.hasOwnProperty(key)) {
+          if (slidersValues.hasOwnProperty.call(slidersValues, key)) {
             let target = slidersValues[key].target.id;
             document.getElementById(target).value = slidersValues[key].storage;
             document.getElementById(target).parentNode.getElementsByTagName('SPAN')[0].innerHTML = slidersValues[key].storage;
@@ -242,7 +239,7 @@
         let target = '--'+container+'-'+position;
         let num = getComputedStyle(document.documentElement).getPropertyValue(target);
 
-        console.log(target +' - '+ num);
+        //console.log(target +' - '+ num);
 
         if (action==='pushtop' && num > 1) {
           //console.log('pushtop');
@@ -265,7 +262,7 @@
         }
 
         function updateItemInfo(area) {
-          console.log(area);
+          //console.log(area);
           let itemText = document.getElementById(area);
 
           //let test = '--'+area+'-top';

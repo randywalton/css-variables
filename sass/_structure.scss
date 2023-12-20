@@ -100,7 +100,7 @@
 
 .main_image {
   position: relative;
-  background-image: url(../../img/stars.jpg);
+  background-image: url(../../assets/images/stars.jpg);
   margin: 0px;
   padding: 0px;
   background-repeat: no-repeat;
@@ -162,25 +162,25 @@
     pointer-events:auto;// bring back pointer control
 
     &.pushtop {
-      background-image:url(../../img/push-top.svg);
+      background-image:url(../../assets/images/push-top.svg);
       background-repeat: no-repeat;
       background-position: center;
     }
 
     &.pushbottom {
-      background-image:url(../../img/push-bottom.svg);
+      background-image:url(../../assets/images/push-bottom.svg);
       background-repeat: no-repeat;
       background-position: center;
     }
 
     &.pushleft {
-      background-image:url(../../img/push-left.svg);
+      background-image:url(../../assets/images/push-left.svg);
       background-repeat: no-repeat;
       background-position: center;
     }
 
     &.pushright {
-      background-image:url(../../img/push-right.svg);
+      background-image:url(../../assets/images/push-right.svg);
       background-repeat: no-repeat;
       background-position: center;
     }
